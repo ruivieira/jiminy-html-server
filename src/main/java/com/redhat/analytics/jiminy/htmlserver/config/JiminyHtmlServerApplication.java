@@ -1,5 +1,7 @@
-package com.redhat.data.analytics.jiminyhtmlserver;
+package com.redhat.analytics.jiminy.htmlserver.config;
 
+
+import com.redhat.analytics.jiminy.htmlserver.service.RatingService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,8 +18,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
+@ComponentScan(basePackages = { "com.redhat.analytics.jiminy.htmlserver.controller", "com.redhat.analytics.jiminy.htmlserver.model",
+		 "com.redhat.analytics.jiminy.htmlserver.service" })
 public class JiminyHtmlServerApplication {
 
+	@Autowired
+	public RatingService service;
 
 	@Bean
 	public Docket coreApi() {
@@ -30,7 +36,7 @@ public class JiminyHtmlServerApplication {
 			        .build())
 			        .select()
 				.apis(RequestHandlerSelectors.any())
-				.paths(regex("/api.*")) 
+				.paths(regex("/api.*"))
 				.build();
 }
 	public static void main(String[] args) {
