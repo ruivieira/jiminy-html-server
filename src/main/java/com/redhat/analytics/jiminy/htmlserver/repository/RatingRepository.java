@@ -1,7 +1,6 @@
 package com.redhat.analytics.jiminy.htmlserver.repository;
 
 import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

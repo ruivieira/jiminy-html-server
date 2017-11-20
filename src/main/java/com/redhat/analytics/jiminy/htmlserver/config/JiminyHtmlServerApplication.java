@@ -27,8 +27,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableMongoRepositories(basePackages = { "com.redhat.analytics.jiminy.htmlserver.repository" })
 public class JiminyHtmlServerApplication implements CommandLineRunner{
 
-	@Autowired
-	public RatingService service;
+//	@Autowired
+//	public RatingService service;
 
 	@Bean
 	public Docket coreApi() {
@@ -50,16 +50,16 @@ public class JiminyHtmlServerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		service.deleteAll();
-		//int userid, int product, double rating
-		service.create(new RatingsDAO(
-				new Ratings(1,1,3.0)
-			)
-		);
-		service.create(new RatingsDAO(
-						new Ratings(2,4,5.0)
-				)
-		);
+//		service.deleteAll();
+//		//int userid, int product, double rating
+//		service.create(new RatingsDAO(
+//				new Ratings(1,1,3.0)
+//			)
+//		);
+//		service.create(new RatingsDAO(
+//						new Ratings(2,4,5.0)
+//				)
+//		);
 
 	}
 }

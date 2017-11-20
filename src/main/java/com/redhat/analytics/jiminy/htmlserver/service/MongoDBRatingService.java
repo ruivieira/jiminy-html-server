@@ -6,7 +6,7 @@ import com.redhat.analytics.jiminy.htmlserver.repository.RatingRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import static java.util.stream.Collectors.toList;
 import java.util.List;
 
 @Service
@@ -22,30 +22,40 @@ public class MongoDBRatingService implements RatingService {
         return new RatingsDAO(rating);
     }
 
+    private RatingsDAO convertToDAO( Ratings ratings){
+        return new RatingsDAO(ratings);
+    }
+
     @Override
     public RatingsDAO delete(Integer id) {
-        Ratings ratings= findById(id);
+        Ratings ratings= repository.findOne(id);
         repository.delete(ratings);
         return new RatingsDAO(ratings);
     }
 
     @Override
     public List<RatingsDAO> findAll() {
-        return null;
+        return repository.findAll().stream().map(this::convertToDAO).collect(toList());
     }
 
     @Override
-    public RatingsDAO findById(String id) {
-        return null;
+    public RatingsDAO findById(Integer id){
+        Ratings ratings= repository.findOne(id);
+        return new RatingsDAO(ratings);
     }
 
     @Override
-    public RatingsDAO update(RatingsDAO users) {
+    public RatingsDAO update(RatingsDAO rate) {
+
+        Ratings rating= repository.findOne(rate.getId());
+        if(rating != null){
+            return convertToDAO(rating);
+        }
         return null;
     }
 
     @Override
     public void deleteAll() {
-
+        repository.deleteAll();
     }
 }
