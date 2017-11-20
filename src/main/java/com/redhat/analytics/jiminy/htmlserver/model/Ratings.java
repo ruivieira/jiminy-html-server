@@ -10,7 +10,7 @@ package com.redhat.analytics.jiminy.htmlserver.model;
 public class Ratings {
 
 //    @Id
-    private String id;
+    private Integer id;
     private int userid;
     private int product;
     private double rating;
@@ -22,11 +22,11 @@ public class Ratings {
         this.rating = rating;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

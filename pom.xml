@@ -93,21 +93,6 @@
 
 
 		</dependencies>
-<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.6</version>
-				<configuration>
-					<linkXref>true</linkXref>
-					<sourceEncoding>utf-8</sourceEncoding>
-					<minimumTokens>100</minimumTokens>
-					<targetJdk>1.8</targetJdk>
-				</configuration>
-			</plugin>
-		</plugins>
-</reporting>
 <profiles>
 		<profile>
 			<id>integration-test</id>

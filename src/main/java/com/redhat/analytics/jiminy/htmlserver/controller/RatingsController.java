@@ -41,7 +41,7 @@ public class RatingsController {
     @ApiOperation(value = "getRatingById", produces="application/json",
             notes="Query the database for rating entry with the id provided in the url path")
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    public RatingsDAO getOneRating(@PathVariable("id") String id) {
+    public RatingsDAO getOneRating(@PathVariable("id") Integer id) {
         LOGGER.info("find rating by id: {}",id);
         return service.findById(id);
     }
@@ -66,7 +66,7 @@ public class RatingsController {
     @ApiOperation(value = "deleteRatingById", produces="application/json",
             notes="Delete rating from database with the id provided in the url")
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    public RatingsDAO deleteRating(@PathVariable("id") String id) {
+    public RatingsDAO deleteRating(@PathVariable("id") Integer id) {
         LOGGER.info("delete rating entry with id: {}", id);
         return service.delete(id);
     }

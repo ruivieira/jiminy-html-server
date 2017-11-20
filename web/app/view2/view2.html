@@ -1,0 +1,96 @@
+<h3>View Recommended Movies Results</h3>
+
+
+<div class="alert alert-danger" role="alert" id="jdgOffline" style="display: none;">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    Infinispan JDG is not currently running. Unable to fetch results from cache.
+</div>
+
+<div class="panel panel-default" style="margin: 20px;">
+    <div class="panel-body">
+<div class="form-group">
+    <label for="userRatingSelect">Select User</label>
+    <select  ng-model="userRatingSelect"class="form-control" id="userRatingSelect">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="userRatingProduct">Select Product</label>
+    <select ng-model="userRatingProduct" class="form-control" id="userRatingProduct">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="userRating">Select Rating</label>
+    <select ng-model="userRating" class="form-control" id="userRating">
+        <option value="5">Must see</option>
+        <option value="4">Will enjoy</option>
+        <option value="3">It's okay</option>
+        <option value="2">Fairly bad</option>
+        <option value="1">Awful</option>
+    </select>
+</div>
+
+        <button type="submit" ng-click="addRating(userRatingSelect, userRatingProduct,userRating )" class="btn btn-primary">Submit</button>
+
+
+
+
+<!--
+* MovieLens ratings are on a scale of 1-5:
+* 5: Must see
+* 4: Will enjoy
+* 3: It's okay
+* 2: Fairly bad
+* 1: Awful
+-->
+</div>
+    </div>
+<div class="panel panel-default" style="margin: 20px;">
+    <div class="panel-body">
+<table id="datatable1" class="row-border hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Foo</td>
+        <td>Bar</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>Someone</td>
+        <td>Youknow</td>
+    </tr>
+    <tr>
+        <td>987</td>
+        <td>Iamout</td>
+        <td>Ofinspiration</td>
+    </tr>
+    </tbody>
+
+</table>
+    <script type="application/javascript">
+$(document).ready(function() {
+    $('#datatable1').DataTable();
+} );
+
+
+    </script>
+        </div>
+    </div>

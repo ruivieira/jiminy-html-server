@@ -1,16 +1,19 @@
 package com.redhat.analytics.jiminy.htmlserver.repository;
 
 import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public class RatingRepository extends MongoRepository<Ratings, String> {
-    Rating findByRating(int id);
+import java.util.List;
 
-    void delete(Rating user);
+@Repository
+public interface RatingRepository extends MongoRepository<Ratings, Integer> {
 
-    List<Rating> findAll();
+    void delete(Ratings user);
 
+    List<Ratings> findAll();
 
-    Rating  findOne(String id);
+    Ratings  findOne(int id);
 
-    Rating save(Rating user);
+    Ratings save(Ratings rating);
 }

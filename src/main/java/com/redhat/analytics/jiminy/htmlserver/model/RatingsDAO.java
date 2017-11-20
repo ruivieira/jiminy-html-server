@@ -7,11 +7,11 @@ import javax.validation.constraints.NotNull;
  */
 public class RatingsDAO {
 
-    private String id;
+    private Integer id;
     @NotNull
-    private int userid;
+    private Integer userid;
     @NotNull
-    private int product;
+    private Integer product;
     @NotNull
     private double rating;
 
@@ -22,11 +22,11 @@ public class RatingsDAO {
         rating=r.getRating();
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,15 +34,15 @@ public class RatingsDAO {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public int getProduct() {
+    public Integer getProduct() {
         return product;
     }
 
-    public void setProduct(int product) {
+    public void setProduct(Integer product) {
         this.product = product;
     }
 
