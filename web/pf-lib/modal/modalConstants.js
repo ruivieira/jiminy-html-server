@@ -1,4 +1,0 @@
-export const MODAL = {
-    TOGGLE_MODAL: "MODAL_TOGGLE_MODAL",
-    ADD_MODAL: "MODAL_ADD_MODAL",
-};
