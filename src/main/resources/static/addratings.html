@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/dist/css/patternfly.min.css" rel="stylesheet">
+    <link href="/dist/css/patternfly-additions.min.css" rel="stylesheet">
+    <link href="/dist/css/react-bootstrap-table.css" rel="stylesheet">
+    <link href="/dist/css/main.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="#000000" name="theme-color">
+    <title>Spark MLib Movie Recommendation JDG Example</title>
+</head>
+<body class="cards-pf">
+<div id="root">
+    <div class="app" data-reactroot="">
+        <nav class="navbar navbar-default navbar-pf navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="/"><label>Radanalytics Spark Mlib MovieRec</label></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav navbar-primary nav navbar-nav">
+                        <li class="" role="presentation">
+                            <a href="/">Movie Rating</a>
+                        </li>
+                        <li class="active" role="presentation">
+                            <a href="/addratings.html">Add Rating</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav><span></span><!-- react-empty: 41 -->
+        <div class="col col-cards-pf container-cards-pf fader">
+            <div class="cards col-xs-10 col-md-8">
+                <div class="card-pf card-pf-accented">
+                    <h2 class="card-pf-title">View Recommended Movies Results</h2>
+                    <div class="card-pf-footer">
+                        <form class="form-horizontal" role="form">
+                            <p class="fields-status-pf">All fields are required.</p>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Select User</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group-btn">
+                                        <select class="form-control" name="display.user">
+                                            <option label="">
+                                            </option>
+                                            <option>
+                                                1
+                                            </option>
+                                            <option>
+                                                2
+                                            </option>
+                                            <option>
+                                                3
+                                            </option>
+                                            <option>
+                                                4
+                                            </option>
+                                            <option>
+                                                5
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Select Product</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group-btn">
+                                        <select class="form-control" name="display.product">
+                                            <option label="">
+                                            </option>
+                                            <option>
+                                                1
+                                            </option>
+                                            <option>
+                                                2
+                                            </option>
+                                            <option>
+                                                3
+                                            </option>
+                                            <option>
+                                                4
+                                            </option>
+                                            <option>
+                                                5
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Select Rating</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group-btn">
+                                        <select class="form-control" name="display.rating">
+                                            <option label="">
+                                            </option>
+                                            <option>
+                                                Must See
+                                            </option>
+                                            <option>
+                                                Will enjoy
+                                            </option>
+                                            <option>
+                                                It's okay
+                                            </option>
+                                            <option>
+                                                Fairly bad
+                                            </option>
+                                            <option>
+                                                Awful
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-default" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+</body>
+</html>
