@@ -1,19 +1,27 @@
 package com.redhat.analytics.jiminy.htmlserver.model;
 
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.constraints.NotNull;
 
 /**
  * RatingDAO
  */
+
+
 public class RatingsDAO {
 
-    private Integer id;
+
+
+    private long id;
     @NotNull
-    private Integer userid;
+    private int userid;
     @NotNull
-    private Integer product;
+    private int product;
     @NotNull
     private double rating;
+    public RatingsDAO(){}
 
     public RatingsDAO(Ratings r){
         id=r.getId();
@@ -22,11 +30,19 @@ public class RatingsDAO {
         rating=r.getRating();
     }
 
-    public Integer getId() {
+
+    public RatingsDAO( int userid, int product, double rating) {
+
+        this.userid = userid;
+        this.product = product;
+        this.rating = rating;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -34,15 +50,15 @@ public class RatingsDAO {
         return userid;
     }
 
-    public void setUserid(Integer userid) {
+    public void setUserid(int userid) {
         this.userid = userid;
     }
 
-    public Integer getProduct() {
+    public int getProduct() {
         return product;
     }
 
-    public void setProduct(Integer product) {
+    public void setProduct(int product) {
         this.product = product;
     }
 

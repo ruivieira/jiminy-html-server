@@ -5,12 +5,21 @@
     <link href="/dist/css/patternfly-additions.min.css" rel="stylesheet">
     <link href="/dist/css/react-bootstrap-table.css" rel="stylesheet">
     <link href="/dist/css/main.css" rel="stylesheet">
+    <!-- JQUERY CDN -->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="#000000" name="theme-color">
     <title>Spark MLib Movie Recommendation JDG Example</title>
+
 </head>
 <body class="cards-pf">
+
+
 <div id="root">
     <div class="app" data-reactroot="">
         <nav class="navbar navbar-default navbar-pf navbar navbar-default" role="navigation">
@@ -37,28 +46,28 @@
                 <div class="card-pf card-pf-accented">
                     <h2 class="card-pf-title">View Recommended Movies Results</h2>
                     <div class="card-pf-footer">
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" id="form" role="form" onsubmit="" >
                             <p class="fields-status-pf">All fields are required.</p>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Select User</label>
                                 <div class="col-sm-8">
                                     <div class="input-group-btn">
-                                        <select class="form-control" name="display.user">
+                                        <select class="form-control" id="displayUser" name="display.user">
                                             <option label="">
                                             </option>
-                                            <option>
+                                            <option value="1">
                                                 1
                                             </option>
-                                            <option>
+                                            <option value="2">
                                                 2
                                             </option>
-                                            <option>
+                                            <option value="3">
                                                 3
                                             </option>
-                                            <option>
+                                            <option value="4">
                                                 4
                                             </option>
-                                            <option>
+                                            <option value="5">
                                                 5
                                             </option>
                                         </select>
@@ -69,22 +78,22 @@
                                 <label class="col-sm-2 control-label">Select Product</label>
                                 <div class="col-sm-8">
                                     <div class="input-group-btn">
-                                        <select class="form-control" name="display.product">
+                                        <select class="form-control" id="displayProduct" name="display.product">
                                             <option label="">
                                             </option>
-                                            <option>
+                                            <option value="1">
                                                 1
                                             </option>
-                                            <option>
+                                            <option value="2">
                                                 2
                                             </option>
-                                            <option>
+                                            <option value="3">
                                                 3
                                             </option>
-                                            <option>
+                                            <option value="4">
                                                 4
                                             </option>
-                                            <option>
+                                            <option value="5">
                                                 5
                                             </option>
                                         </select>
@@ -95,22 +104,22 @@
                                 <label class="col-sm-2 control-label">Select Rating</label>
                                 <div class="col-sm-8">
                                     <div class="input-group-btn">
-                                        <select class="form-control" name="display.rating">
+                                        <select class="form-control" id="displayRating" name="display.rating">
                                             <option label="">
                                             </option>
-                                            <option>
+                                            <option value="5.0">
                                                 Must See
                                             </option>
-                                            <option>
+                                            <option value="4.0">
                                                 Will enjoy
                                             </option>
-                                            <option>
+                                            <option value="3.0">
                                                 It's okay
                                             </option>
-                                            <option>
+                                            <option value="2.0">
                                                 Fairly bad
                                             </option>
-                                            <option>
+                                            <option value="1.0">
                                                 Awful
                                             </option>
                                         </select>
@@ -119,7 +128,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button class="btn btn-default" type="submit">Submit</button>
+                                    <button class="btn btn-default" type="submit" onclick="displayReport();">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -129,6 +138,66 @@
         </div>
     </div>
 </div>
+
+
+<script>
+$('form').submit(false);
+
+
+var displayReport= function(){
+
+var _user= $("#displayUser").val();
+var _product= $("#displayProduct").val();
+var _rating= $("#displayRating").val();
+
+$.ajax({
+    type: "POST",
+    url:"/api/mock/rating",
+    data: JSON.stringify({ userid: _user, product: _product, rating: _rating }),
+    contentType: "application/json",
+    dataType:"json",
+    success: function(data){
+
+    $("#statusMsg").html( "<div class=\"alert alert-success alert-dismissable\">"+
+                       "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">"+
+                            "<span class=\"pficon pficon-close\"></span>"+
+                        "</button>"+
+                        "<span class=\"pficon pficon-ok\"></span>"+
+                        "<strong>Great job!</strong> You have added a movie rating, UserId: "+data.userid+ " Product: "+data.product + " Rating: "+ data.rating+
+                    "</div>")
+
+    },
+    failure: function(errMsg){
+        alert("Error: "+errMsg);
+    }
+});
+
+
+
+
+
+};
+</script>
+<div id="tableSpace">
+
+    <div class="col col-cards-pf container-cards-pf fader">
+        <div class="cards col-xs-10 col-md-8">
+            <div className="card-pf card-pf-accented">
+
+                <div className="card-pf-footer" id="statusMsg">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="/dist/main.js"></script>
+
+
 <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

@@ -1,4 +1,10 @@
-spring.data.mongodb.host: zhassan.yyz.redhat.com 
+#Postgres persistence
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jiminy
+    username: postgres
+    password: root
+dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
     port: 8181
 logging:

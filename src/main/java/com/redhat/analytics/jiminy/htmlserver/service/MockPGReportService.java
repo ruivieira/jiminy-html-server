@@ -13,7 +13,8 @@ import java.util.Arrays;
 @Service
 public class MockPGReportService implements MockService {
 
-    public ReportDAO findAll(){
+    public ReportDAO
+    findAll(){
         return new ReportDAO("OK",
                 Arrays.asList(
                     new ColumnHeader("id","ID"),

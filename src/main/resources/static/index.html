@@ -5,6 +5,12 @@
     <link href="/dist/css/patternfly-additions.min.css" rel="stylesheet">
     <link href="/dist/css/react-bootstrap-table.css" rel="stylesheet">
     <link href="/dist/css/main.css" rel="stylesheet">
+    <!-- JQUERY CDN -->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="#000000" name="theme-color">
@@ -41,7 +47,7 @@
                                 <label class="col-sm-2 control-label">Select User</label>
                                 <div class="col-sm-8">
                                     <div class="input-group-btn">
-                                        <select class="form-control" name="ratings.user">
+                                        <select class="form-control" id="userRating" name="ratings.user">
                                             <option label="">
                                             </option>
                                             <option>
@@ -65,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button class="btn btn-default" type="submit">Submit</button>
+                                    <button class="btn btn-default" type="submit" onclick="displayReport()">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -75,6 +81,64 @@
         </div><!-- react-empty: 40 -->
     </div>
 </div>
+
+
+<script>
+$('form').submit(false);
+var displayReport= function(){
+var userId= $("#userRating").val();
+
+ $.get("/api/mock/predictor/"+userId,
+        function(data, status){
+var conf={ columns: data.columns,
+            data: data.dataSet,
+            dom: "t",
+            order: [[ 0, 'asc' ]],
+            pfConfig: {
+              filterCaseInsensitive: true,
+              paginationSelector: "#pagination1",
+              colvisMenuSelector: '.table-view-pf-colvis-menu'
+            },
+         };
+
+    var table= $("#table1").DataTable(conf);
+    });
+};
+
+
+
+</script>
+
+
+
+<div id="tableSpace">
+
+    <div class="col col-cards-pf container-cards-pf fader">
+        <div class="cards col-xs-10 col-md-8">
+            <div className="card-pf card-pf-accented">
+                <h2 className="card-pf-title"> Recommended products for user </h2>
+                    <div className="card-pf-footer">
+                         <table class="table table-striped table-bordered table-hover" id="table1"/>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="/dist/main.js"></script>
+
+
+
 <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

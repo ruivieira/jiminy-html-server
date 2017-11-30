@@ -1,48 +1,61 @@
 package com.redhat.analytics.jiminy.htmlserver.model;
 
-//import org.springframework.data.annotation.Id;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  * Rating Model class
  *
  * @author Zak Hassan
  */
-public class Ratings {
+@Entity
+@Table(name = "ratings")
+public class Ratings implements Serializable {
 
-//    @Id
-    private Integer id;
-    private int userid;
-    private int product;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private Integer userid;
+    private Integer product;
     private double rating;
+    private Integer timestamp;
 
 
-    public Ratings(int userid, int product, double rating) {
+    public Ratings(Integer userid, Integer product, double rating) {
         this.userid = userid;
         this.product = product;
         this.rating = rating;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public int getProduct() {
+    public Integer getProduct() {
         return product;
     }
 
-    public void setProduct(int product) {
+    public void setProduct(Integer product) {
         this.product = product;
     }
 
@@ -53,6 +66,11 @@ public class Ratings {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    public Integer getTimestamp() {    return timestamp; }
+
+    public void setTimestamp(Integer timestamp) {   this.timestamp = timestamp; }
+
 
     @Override
     public String toString() {
