@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.rest;
+package com.redhat.analytics.jiminy.htmlserver.model;
 
 import java.util.List;
 

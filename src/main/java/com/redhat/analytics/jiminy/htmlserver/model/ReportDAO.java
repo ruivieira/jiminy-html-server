@@ -6,7 +6,7 @@ public class ReportDAO {
 
     private String status;
     private List<ColumnHeader> columns;
-    private List<MovieDataSet> dataSet;
+    private List<?> dataSet;
 
     public String getStatus() {
         return status;
@@ -24,17 +24,23 @@ public class ReportDAO {
         this.columns = columns;
     }
 
-    public List<MovieDataSet> getDataSet() {
+    public List<?> getDataSet() {
         return dataSet;
     }
 
-    public void setDataSet(List<MovieDataSet> dataSet) {
+    public void setDataSet(List<?> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public ReportDAO(String status, List<ColumnHeader> columns, List<MovieDataSet> dataSet) {
+    public ReportDAO(String status, List<ColumnHeader> columns, List<?> dataSet) {
         this.status = status;
         this.columns = columns;
         this.dataSet = dataSet;
     }
+
+	@Override
+	public String toString() {
+		return "ReportDAO [status=" + status + ", columns=" + columns + ", dataSet=" + dataSet + "]";
+	}
+    
 }
