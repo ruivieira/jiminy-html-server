@@ -8,19 +8,15 @@ import javax.validation.constraints.NotNull;
 /**
  * RatingDAO
  */
-
-
 public class RatingsDAO {
-
-
-
     private long id;
+    @NotNull  
+    private Integer userid;
     @NotNull
-    private int userid;
-    @NotNull
-    private int product;
+    private Integer product;
     @NotNull
     private double rating;
+    private Integer timestamp;
     public RatingsDAO(){}
 
     public RatingsDAO(Ratings r){
@@ -28,49 +24,59 @@ public class RatingsDAO {
         userid=r.getUserid();
         product=r.getProduct();
         rating=r.getRating();
+        timestamp=r.getTimestamp();
     }
 
+    public RatingsDAO(long id, Integer userid, Integer product, double rating, Integer timestamp) {
+		super();
+		this.id = id;
+		this.userid = userid;
+		this.product = product;
+		this.rating = rating;
+		this.timestamp = timestamp;
+	}
 
-    public RatingsDAO( int userid, int product, double rating) {
+	public long getId() {
+		return id;
+	}
 
-        this.userid = userid;
-        this.product = product;
-        this.rating = rating;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public Integer getUserid() {
+		return userid;
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
 
-    public int getUserid() {
-        return userid;
-    }
+	public Integer getTimestamp() {
+		return timestamp;
+	}
 
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
+	public void setTimestamp(Integer timestamp) {
+		this.timestamp = timestamp;
+	}
 
-    public int getProduct() {
-        return product;
-    }
+	public Integer getProduct() {
+		return product;
+	}
 
-    public void setProduct(int product) {
-        this.product = product;
-    }
+	public void setProduct(Integer product) {
+		this.product = product;
+	}
 
-    public double getRating() {
-        return rating;
-    }
+	public double getRating() {
+		return rating;
+	}
 
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
 
-    @Override
+	@Override
     public String toString() {
         return "RatingsDAO{" +
                 "id='" + id + '\'' +

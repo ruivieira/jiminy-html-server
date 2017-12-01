@@ -10,16 +10,12 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="#000000" name="theme-color">
-    <title>Spark MLib Movie Recommendation JDG Example</title>
-
+    <title>Jiminy - Add Ratings </title>
 </head>
 <body class="cards-pf">
-
-
 <div id="root">
     <div class="app" data-reactroot="">
         <nav class="navbar navbar-default navbar-pf navbar navbar-default" role="navigation">
@@ -138,26 +134,19 @@
         </div>
     </div>
 </div>
-
-
 <script>
 $('form').submit(false);
-
-
 var displayReport= function(){
-
 var _user= $("#displayUser").val();
 var _product= $("#displayProduct").val();
 var _rating= $("#displayRating").val();
-
 $.ajax({
     type: "POST",
-    url:"/api/mock/rating",
+    url:"/api/rating",
     data: JSON.stringify({ userid: _user, product: _product, rating: _rating }),
     contentType: "application/json",
     dataType:"json",
     success: function(data){
-
     $("#statusMsg").html( "<div class=\"alert alert-success alert-dismissable\">"+
                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">"+
                             "<span class=\"pficon pficon-close\"></span>"+
@@ -171,33 +160,19 @@ $.ajax({
         alert("Error: "+errMsg);
     }
 });
-
-
-
-
-
 };
 </script>
 <div id="tableSpace">
-
     <div class="col col-cards-pf container-cards-pf fader">
         <div class="cards col-xs-10 col-md-8">
             <div className="card-pf card-pf-accented">
-
                 <div className="card-pf-footer" id="statusMsg">
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
-
 <script src="/dist/main.js"></script>
-
-
 <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

@@ -10,11 +10,10 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="#000000" name="theme-color">
-    <title>Spark MLib Movie Recommendation JDG Example</title>
+    <title>Jiminy - Recommendations Report</title>
 </head>
 <body class="cards-pf">
 <div id="root">
@@ -81,38 +80,28 @@
         </div><!-- react-empty: 40 -->
     </div>
 </div>
-
-
 <script>
 $('form').submit(false);
 var displayReport= function(){
 var userId= $("#userRating").val();
 
- $.get("/api/mock/predictor/"+userId,
+ $.get("/api/predictor/"+userId,
         function(data, status){
-var conf={ columns: data.columns,
-            data: data.dataSet,
-            dom: "t",
-            order: [[ 0, 'asc' ]],
-            pfConfig: {
-              filterCaseInsensitive: true,
-              paginationSelector: "#pagination1",
-              colvisMenuSelector: '.table-view-pf-colvis-menu'
-            },
-         };
-
-    var table= $("#table1").DataTable(conf);
+			var conf={ columns: data.columns,
+		            data: data.dataSet,
+		            dom: "t",
+		            order: [[ 0, 'asc' ]],
+		            pfConfig: {
+		              filterCaseInsensitive: true,
+		              paginationSelector: "#pagination1",
+		              colvisMenuSelector: '.table-view-pf-colvis-menu'
+		            },
+		         };
+		    var table= $("#table1").DataTable(conf);
     });
 };
-
-
-
 </script>
-
-
-
 <div id="tableSpace">
-
     <div class="col col-cards-pf container-cards-pf fader">
         <div class="cards col-xs-10 col-md-8">
             <div className="card-pf card-pf-accented">
@@ -123,22 +112,8 @@ var conf={ columns: data.columns,
             </div>
         </div>
     </div>
-
-
 </div>
-
-
-
-
-
-
-
-
-
 <script src="/dist/main.js"></script>
-
-
-
 <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

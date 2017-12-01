@@ -1,14 +1,15 @@
-#Postgres persistence
 openshift:
     config:
         predictor:
             url: http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jiminy
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: root
-dialect: org.hibernate.dialect.PostgreSQLDialect
+    driverClassName: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
 server:
     port: 8181
 logging:

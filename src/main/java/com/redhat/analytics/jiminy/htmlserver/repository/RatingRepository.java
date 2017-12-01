@@ -1,19 +1,11 @@
 package com.redhat.analytics.jiminy.htmlserver.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
 
-
-import java.util.List;
-
-//@Repository
-public interface RatingRepository { //extends CrudRepository<Ratings, Long> { //extends MongoRepository<Ratings, Integer> {
-
-    void delete(Ratings user);
-
-    List<Ratings> findAll();
-
-
-    Ratings findOne(long id);
-
-    Ratings save(Ratings rating);
+@Repository
+public interface RatingRepository extends JpaRepository<Ratings, Long> { 
+ 
 }
