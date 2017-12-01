@@ -21,6 +21,7 @@ import com.sun.jersey.api.json.JSONConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +44,13 @@ import io.swagger.annotations.ApiOperation;
 public class MockController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MockController.class);
+    @Value("${openshift.config.predictor.url}")
+    private String predictorURL;
+    
+//	void setPredictorUrl(String predictorUrl) {
+//		System.out.println("Predictor URL: "+predictorUrl);
+//		predictorURL=predictorUrl;
+//	}
 
     @Autowired
     MockPGReportService service;
@@ -85,8 +93,9 @@ public class MockController {
         try {
 
 			Client client = createJSONRestClient();
-			String uri = "http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks";
-			WebResource webResource = client.resource(uri);
+//			String uri = "http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks";
+		
+			WebResource webResource = client.resource(predictorURL);
 			PredictionType pr = fetchPrediction(webResource, new HashMap<String, Object>() {
 				{
 					put("user", userid);
@@ -94,9 +103,8 @@ public class MockController {
 				}
 			});
 			
-			TimeUnit.SECONDS.sleep(10);
-			String rec = "http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks/"
-					+ pr.getPrediction().getId();
+			TimeUnit.SECONDS.sleep(1);
+			String rec = predictorURL+ "/" + pr.getPrediction().getId();
 			ClientResponse response = getTopRatedProducts(rec);
 
 			String output = response.getEntity(String.class);

@@ -1,4 +1,8 @@
 #Postgres persistence
+openshift:
+    config:
+        predictor:
+            url: http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/jiminy

@@ -1,8 +1,10 @@
 package com.redhat.analytics.jiminy.htmlserver.config;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -19,9 +21,11 @@ import static springfox.documentation.builders.PathSelectors.regex;
 //@EnableJpaRepositories(basePackages = {"com.redhat.analytics.jiminy.htmlserver.repository"})
 @ComponentScan(basePackages = { "com.redhat.analytics.jiminy.htmlserver.controller", "com.redhat.analytics.jiminy.htmlserver.model",
 		"com.redhat.analytics.jiminy.htmlserver.service" ,"com.redhat.analytics.jiminy.htmlserver.repository" })
+@EnableConfigurationProperties
 public class JiminyHtmlServerApplication  {
 
-
+	
+	
 	@Bean
 	public Docket coreApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
