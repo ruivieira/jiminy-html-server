@@ -40,6 +40,13 @@ import com.sun.jersey.api.json.JSONConfiguration;
 
 import io.swagger.annotations.ApiOperation;
 
+/**
+ * RatingsController<br>
+ * 
+ * Spring controller which will serve requests for CRUD operations against the ratings database.
+ * 
+ * @author zhassan
+ */
 @RestController
 @RequestMapping()
 public class RatingsController {
@@ -53,7 +60,7 @@ public class RatingsController {
 	RatingService service;
 	 
 	
-	@ApiOperation(value = "getAllRatings", produces = "application/json", notes = "Provides list of notifications that monitord is managing")
+	@ApiOperation(value = "getAllRatings", produces = "application/json", notes = "Querythe database to fetch full list of ratings from the postgres db")
 	@RequestMapping(method = RequestMethod.GET, path = "/api/ratings")
 	public List<RatingsDAO> getAllRatings() {
 		LOGGER.info("get all ratings");
@@ -96,69 +103,11 @@ public class RatingsController {
 		LOGGER.info("Getting prediction report: {} ", userid);
 		ReportDAO report = null;
 		try {
-			Client client = createJSONRestClient();
-			WebResource webResource = client.resource(predictorURL);
-			PredictionType pr = fetchPrediction(webResource, new HashMap<String, Object>() {
-				{
-					put("user", userid);
-					put("topk", 5);
-				}
-			});
-			TimeUnit.SECONDS.sleep(1);
-			String rec = predictorURL + "/" + pr.getPrediction().getId();
-			ClientResponse response = getTopRatedProducts(rec);
-			String output = response.getEntity(String.class);
-			System.out.println("Final Output from Server .... \n");
-			ObjectMapper mapper = new ObjectMapper();
-			RankType rank = mapper.readValue(output, RankType.class);
-			System.out.println(rank);
-			report = new ReportDAO("OK",
-					Arrays.asList(new ColumnHeader("id", "ID"), new ColumnHeader("rating", "Rating")),
-					rank.getProducts());
-			System.out.println(report);
+			report = PredictorUtils.fetchPredictions(userid,5, predictorURL);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return report;
-	}
-
-	// TODO: Need to move the functions below into utility class
-	private ClientResponse getTopRatedProducts(String rec) {
-		System.out.println(rec);
-		Client secondReq = Client.create();
-
-		WebResource secondResource = secondReq.resource(rec);
-		ClientResponse response = secondResource.accept("application/json").get(ClientResponse.class);
-		if (response.getStatus() != 200) {
-			throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
-		}
-		return response;
-	}
-
-	private PredictionType fetchPrediction(WebResource webResource, Map<String, Object> input)
-			throws IOException, JsonParseException, JsonMappingException {
-		ClientResponse response = webResource.accept("application/json").type("application/json")
-				.post(ClientResponse.class, input);
-
-		if (response.getStatus() != 201) {
-			throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 		}
 
-		String output = response.getEntity(String.class);
-
-		System.out.println("Output from Server .... \n");
-		System.out.println(output);
-
-		ObjectMapper mapper = new ObjectMapper();
-		PredictionType pr = mapper.readValue(output, PredictionType.class);
-		return pr;
-	}
-
-	private Client createJSONRestClient() {
-		ClientConfig clientConfig = new DefaultClientConfig();
-		clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, true);
-
-		Client client = Client.create(clientConfig);
-		return client;
-	}
 }
