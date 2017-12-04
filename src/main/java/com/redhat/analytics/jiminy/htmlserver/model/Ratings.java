@@ -17,23 +17,21 @@ import org.hibernate.annotations.Parameter;
  * @author Zak Hassan
  */
 @Entity
-@Table(name = "productratings")
+@Table(name = "ratings")
 public class Ratings implements Serializable {
-	@GenericGenerator(name = "usersSequenceGenerator", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-			@Parameter(name = "sequence_name", value = "usersSequence"),
-			@Parameter(name = "initial_value", value = "1"), @Parameter(name = "increment_size", value = "1") })
 
 	@Id
-	@GeneratedValue(generator = "usersSequenceGenerator")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private Integer userid;
-	private Integer product;
+ 	private Integer movieid;
 	private double rating;
 	private Integer timestamp;
 
-	public Ratings(Integer userid, Integer product, double rating, Integer timestamp) {
+	public Ratings(Integer userid, Integer movieid, double rating, Integer timestamp) {
+		
 		this.userid = userid;
-		this.product = product;
+		this.movieid = movieid;
 		this.rating = rating;
 		this.timestamp = timestamp;
 	}
@@ -54,14 +52,6 @@ public class Ratings implements Serializable {
 		this.userid = userid;
 	}
 
-	public Integer getProduct() {
-		return product;
-	}
-
-	public void setProduct(Integer product) {
-		this.product = product;
-	}
-
 	public double getRating() {
 		return rating;
 	}
@@ -78,9 +68,17 @@ public class Ratings implements Serializable {
 		this.timestamp = timestamp;
 	}
 
+	public Integer getMovieId() {
+		return movieid;
+	}
+
+	public void setMovieId(Integer movieId) {
+		this.movieid = movieId;
+	}
+
 	@Override
 	public String toString() {
-		return "Ratings{" + "id='" + id + '\'' + ", userid=" + userid + ", product=" + product + ", rating=" + rating
-				+ '}';
+		return "Ratings [id=" + id + ", userid=" + userid + ", movieId=" + movieid + ", rating=" + rating
+				+ ", timestamp=" + timestamp + "]";
 	}
 }

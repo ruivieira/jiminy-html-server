@@ -13,7 +13,7 @@ public class RatingsDAO {
     @NotNull  
     private Integer userid;
     @NotNull
-    private Integer product;
+    private Integer movieid;
     @NotNull
     private double rating;
     private Integer timestamp;
@@ -22,16 +22,16 @@ public class RatingsDAO {
     public RatingsDAO(Ratings r){
         id=r.getId();
         userid=r.getUserid();
-        product=r.getProduct();
+        movieid=r.getMovieId();
         rating=r.getRating();
         timestamp=r.getTimestamp();
     }
 
-    public RatingsDAO(long id, Integer userid, Integer product, double rating, Integer timestamp) {
+    public RatingsDAO(long id, Integer userid, Integer movieid, double rating, Integer timestamp) {
 		super();
 		this.id = id;
 		this.userid = userid;
-		this.product = product;
+		this.movieid = movieid;
 		this.rating = rating;
 		this.timestamp = timestamp;
 	}
@@ -60,14 +60,7 @@ public class RatingsDAO {
 		this.timestamp = timestamp;
 	}
 
-	public Integer getProduct() {
-		return product;
-	}
-
-	public void setProduct(Integer product) {
-		this.product = product;
-	}
-
+	 
 	public double getRating() {
 		return rating;
 	}
@@ -76,13 +69,21 @@ public class RatingsDAO {
 		this.rating = rating;
 	}
 
+	 
+	 
+ 
+
+	public Integer getMovieid() {
+		return movieid;
+	}
+
+	public void setMovieid(Integer movieid) {
+		this.movieid = movieid;
+	}
+
 	@Override
-    public String toString() {
-        return "RatingsDAO{" +
-                "id='" + id + '\'' +
-                ", userid=" + userid +
-                ", product=" + product +
-                ", rating=" + rating +
-                '}';
-    }
+	public String toString() {
+		return "RatingsDAO [id=" + id + ", userid=" + userid + ", movieid=" + movieid + ", rating=" + rating
+				+ ", timestamp=" + timestamp + "]";
+	}
 }

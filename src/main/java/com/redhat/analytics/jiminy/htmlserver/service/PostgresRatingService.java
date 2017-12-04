@@ -17,7 +17,7 @@ public class PostgresRatingService implements RatingService {
 
     @Override
     public RatingsDAO create(RatingsDAO r) {
-        Ratings rating= repository.save(new Ratings(r.getUserid(), r.getProduct(), r.getRating(), 1 ));
+        Ratings rating= repository.save(new Ratings(r.getUserid(), r.getMovieid(), r.getRating(), 1 ));
         return new RatingsDAO(rating);
     }
 
