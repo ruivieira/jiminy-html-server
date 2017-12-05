@@ -28,6 +28,9 @@ public class Ratings implements Serializable {
 	private double rating;
 	private Integer timestamp;
 
+	public Ratings(){
+		
+	}
 	public Ratings(Integer userid, Integer movieid, double rating, Integer timestamp) {
 		
 		this.userid = userid;
