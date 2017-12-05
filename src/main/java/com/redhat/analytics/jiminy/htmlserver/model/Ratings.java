@@ -12,9 +12,10 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 /**
- * Rating Model class
- *
- * @author Zak Hassan
+ * Ratings<br>
+ * 
+ * Rating Model class used for persistence with postgres datastore backend.
+ * @author Zak Hassan <zhassan@redhat.com>
  */
 @Entity
 @Table(name = "ratings")

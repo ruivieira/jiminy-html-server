@@ -31,6 +31,7 @@ import com.redhat.analytics.jiminy.htmlserver.model.RankType;
 import com.redhat.analytics.jiminy.htmlserver.model.RatingsDAO;
 import com.redhat.analytics.jiminy.htmlserver.model.ReportDAO;
 import com.redhat.analytics.jiminy.htmlserver.service.RatingService;
+import com.redhat.analytics.jiminy.htmlserver.utils.PredictorUtils;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -43,13 +44,18 @@ import io.swagger.annotations.ApiOperation;
 /**
  * RatingsController<br>
  * 
- * Spring controller which will serve requests for CRUD operations against the ratings database.
+ * Spring controller which will serve requests for CRUD operations against the ratings database. 
+ * In this controller there is a method that will proxy the predictor when users provide a userid
+ * and it will provide a top 5 recommended products. To get more then 5 predictions change the 
+ * NUM_PREDICTIONS constant.
  * 
- * @author zhassan
+ * @author Zak Hassan <zhassan@redhat.com>
  */
 @RestController
 @RequestMapping()
 public class RatingsController {
+
+	private static final int NUM_PREDICTIONS = 5;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RatingsController.class);
 
@@ -103,7 +109,7 @@ public class RatingsController {
 		LOGGER.info("Getting prediction report: {} ", userid);
 		ReportDAO report = null;
 		try {
-			report = PredictorUtils.fetchPredictions(userid,5, predictorURL);
+			report = PredictorUtils.fetchPredictions(userid,NUM_PREDICTIONS, predictorURL);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

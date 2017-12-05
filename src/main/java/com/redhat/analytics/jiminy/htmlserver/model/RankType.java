@@ -2,6 +2,15 @@ package com.redhat.analytics.jiminy.htmlserver.model;
 
 import java.util.List;
 
+/**
+ * RankType<br>
+ * 
+ * There are 2 calls that get made to the predictor. The first call will trigger the predictor to start calculating
+ * what the recommended products are. It will return a prediction id which then gets used to make a second call.
+ * This class is used to map the response from the second call to a pojo.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 public class RankType {
 
 	String id;

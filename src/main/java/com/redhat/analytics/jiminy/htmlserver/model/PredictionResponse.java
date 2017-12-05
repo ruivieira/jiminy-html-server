@@ -1,7 +1,14 @@
 package com.redhat.analytics.jiminy.htmlserver.model;
 
 import java.util.List;
-
+/**
+ * PredictionResponse<br>
+ * 
+ * Encloses the predictions number of recommendations and userid. In the ui a user makes a webservice call
+ * passing in a userid and this is the response that the client would recieve.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 public class PredictionResponse {
 	String id;
 	List<String> products;

@@ -1,5 +1,13 @@
 package com.redhat.analytics.jiminy.htmlserver.model;
 
+/**
+ * ProductType<br>
+ * 
+ * This class is enclosed in RankType and is used in the second call to the predictor. See RankType javadocs for
+ * more details.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 public class ProductType {
 	
 	String id;

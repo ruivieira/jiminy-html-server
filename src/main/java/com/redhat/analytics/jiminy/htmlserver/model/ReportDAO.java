@@ -2,6 +2,13 @@ package com.redhat.analytics.jiminy.htmlserver.model;
 
 import java.util.List;
 
+/**
+ * ReportDAO<br>
+ * 
+ * Encloses the full report on what products would be recommended for a user given a userid.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 public class ReportDAO {
 
     private String status;

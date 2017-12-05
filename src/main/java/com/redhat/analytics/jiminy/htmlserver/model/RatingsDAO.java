@@ -6,7 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;
 
 /**
- * RatingDAO
+ * RatingDAO<br>
+ * 
+ * This is a dao object that is used between the controller and the repository for data storage.
+ * @author Zak Hassan <zhassan@redhat.com>
  */
 public class RatingsDAO {
     private long id;

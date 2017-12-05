@@ -2,6 +2,12 @@ package com.redhat.analytics.jiminy.htmlserver.model;
 
 import java.util.List;
 
+/**
+ * PredictionType<br>
+ * This is a wrapper for the prediction response. See PredictionResponse java docs for how what this class 
+ * is used for.
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 public class PredictionType {
 	
 	PredictionResponse prediction;

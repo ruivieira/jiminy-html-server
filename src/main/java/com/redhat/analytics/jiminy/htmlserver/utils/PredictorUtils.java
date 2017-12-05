@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.controller;
+package com.redhat.analytics.jiminy.htmlserver.utils;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ import com.sun.jersey.api.json.JSONConfiguration;
  * PredictorUtils<br>
  * Simple utility class to proxy predictor service and get recommendations from the trained model
  * 
- * @author zhassan
+ * @author Zak Hassan <zhassan@redhat.com>
  */
 public class PredictorUtils {
 	 

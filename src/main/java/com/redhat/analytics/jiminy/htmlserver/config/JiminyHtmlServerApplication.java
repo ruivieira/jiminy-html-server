@@ -19,8 +19,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
+ * JiminyHtmlServerApplication<br>
  * 
- * @author zhassan
+ * This is the entry point of this springboot application and will be the place where the main configurations are setup
+ * Below you will see that we have setup swagger documentation for webservices and component scan for seaching for
+ * spring components in the application by specifying the package name.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
  *
  */
 @EnableSwagger2
