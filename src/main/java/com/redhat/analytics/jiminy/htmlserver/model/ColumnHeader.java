@@ -1,5 +1,14 @@
 package com.redhat.analytics.jiminy.htmlserver.model;
 
+/**
+ * 
+ * ColumnHeader<br>
+ * Datatable requires 2 fields columns and dataSet to exist enorder to render the datatable.
+ * You can created multiple instances of this class in a list and push to the UI. 
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ *
+ */
 public class ColumnHeader {
 
     private String data;

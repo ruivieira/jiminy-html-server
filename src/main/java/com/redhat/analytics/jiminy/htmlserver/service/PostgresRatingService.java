@@ -9,6 +9,13 @@ import org.springframework.stereotype.Service;
 import static java.util.stream.Collectors.toList;
 import java.util.List;
 
+/**
+ * PostgresRatingService<br>
+ * 
+ * Used to interface between the controller and the data access layer.
+ * 
+ * @author Zak Hassan <zhassan@redhat.com>
+ */
 @Service
 public class PostgresRatingService implements RatingService {
 

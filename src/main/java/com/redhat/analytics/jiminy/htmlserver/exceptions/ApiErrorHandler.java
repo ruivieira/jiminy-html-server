@@ -16,7 +16,7 @@ import com.redhat.analytics.jiminy.htmlserver.model.ValidationErrorList;
 /**
  * ApiErrorHandler<br>
  *
- * @author Zak Hassan
+ * @author Zak Hassan <zhassan@redhat.com>
  */
 @ControllerAdvice
 public class ApiErrorHandler {
