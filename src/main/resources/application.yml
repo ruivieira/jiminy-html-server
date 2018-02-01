@@ -1,12 +1,12 @@
 openshift:
     config:
         predictor:
-            url: http://predictor-jiminy2.e8ca.engint.openshiftapps.com/predictions/ranks
+            url: http://predictor-elmiko.apps.jiminy.radanalyticslabs.io/predictions/ranks
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: root
+    password: postgres
     driverClassName: org.postgresql.Driver
   jpa:
     generate-ddl: true
