@@ -1,7 +1,5 @@
-package com.redhat.analytics.jiminy.htmlserver.model;
+package io.radanalytics.jiminy.model;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
 

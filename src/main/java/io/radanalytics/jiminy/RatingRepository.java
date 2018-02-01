@@ -1,9 +1,8 @@
-package com.redhat.analytics.jiminy.htmlserver.repository;
+package io.radanalytics.jiminy;
 
+import io.radanalytics.jiminy.model.Ratings;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
 
 /**
  * RatingRepository<br>
@@ -14,6 +13,6 @@ import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
  * @author Zak Hassan <zhassan@redhat.com>
  */
 @Repository
-public interface RatingRepository extends JpaRepository<Ratings, Long> { 
+public interface RatingRepository extends JpaRepository<Ratings, Long> {
  
 }

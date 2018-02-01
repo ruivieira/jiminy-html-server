@@ -1,14 +1,11 @@
-package com.redhat.analytics.jiminy.htmlserver.controller;
+package io.radanalytics.jiminy;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import javax.validation.Valid;
 
+import io.radanalytics.jiminy.model.RatingsDAO;
+import io.radanalytics.jiminy.model.ReportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 //import io.swagger.annotations.ApiOperation;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.redhat.analytics.jiminy.htmlserver.model.ColumnHeader;
-import com.redhat.analytics.jiminy.htmlserver.model.PredictionType;
-import com.redhat.analytics.jiminy.htmlserver.model.RankType;
-import com.redhat.analytics.jiminy.htmlserver.model.RatingsDAO;
-import com.redhat.analytics.jiminy.htmlserver.model.ReportDAO;
-import com.redhat.analytics.jiminy.htmlserver.service.RatingService;
-import com.redhat.analytics.jiminy.htmlserver.utils.PredictorUtils;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jersey.api.json.JSONConfiguration;
+import io.radanalytics.jiminy.service.RatingService;
 
 import io.swagger.annotations.ApiOperation;
 

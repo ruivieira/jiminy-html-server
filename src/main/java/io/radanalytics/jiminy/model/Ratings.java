@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.model;
+package io.radanalytics.jiminy.model;
 
 import java.io.Serializable;
 

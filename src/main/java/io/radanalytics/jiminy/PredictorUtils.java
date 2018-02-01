@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.utils;
+package io.radanalytics.jiminy;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import io.radanalytics.jiminy.model.ColumnHeader;
+import io.radanalytics.jiminy.model.PredictionType;
+import io.radanalytics.jiminy.model.ReportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.redhat.analytics.jiminy.htmlserver.model.ColumnHeader;
-import com.redhat.analytics.jiminy.htmlserver.model.PredictionType;
-import com.redhat.analytics.jiminy.htmlserver.model.RankType;
-import com.redhat.analytics.jiminy.htmlserver.model.ReportDAO;
+import io.radanalytics.jiminy.model.RankType;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
