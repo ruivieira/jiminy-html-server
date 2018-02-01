@@ -30,11 +30,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = {"com.redhat.analytics.jiminy.htmlserver.repository"})
-@ComponentScan(basePackages = { "com.redhat.analytics.jiminy.htmlserver.controller", "com.redhat.analytics.jiminy.htmlserver.model",
-		"com.redhat.analytics.jiminy.htmlserver.service" ,"com.redhat.analytics.jiminy.htmlserver.repository" })
+@EnableJpaRepositories("io.radanalytics.jiminy")
+@ComponentScan("io.radanalytics.jiminy")
 @EnableConfigurationProperties
-@EntityScan("com.redhat.analytics.jiminy.htmlserver.*")  
+@EntityScan("io.radanalytics.jiminy")
 public class JiminyHtmlServerApplication  {
 
 	
