@@ -1,6 +1,7 @@
-package com.redhat.analytics.jiminy.htmlserver.service;
+package io.radanalytics.jiminy.service;
 
-import com.redhat.analytics.jiminy.htmlserver.model.RatingsDAO;
+import io.radanalytics.jiminy.model.RatingsDAO;
+
 import java.util.List;
 
 /**

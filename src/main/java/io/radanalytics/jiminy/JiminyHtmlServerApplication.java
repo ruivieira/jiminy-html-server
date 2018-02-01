@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.config;
+package io.radanalytics.jiminy;
 
 
 import static springfox.documentation.builders.PathSelectors.regex;

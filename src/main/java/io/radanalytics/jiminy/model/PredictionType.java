@@ -1,6 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.model;
-
-import java.util.List;
+package io.radanalytics.jiminy.model;
 
 /**
  * PredictionType<br>

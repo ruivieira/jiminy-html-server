@@ -1,8 +1,8 @@
-package com.redhat.analytics.jiminy.htmlserver.service;
+package io.radanalytics.jiminy.service;
 
-import com.redhat.analytics.jiminy.htmlserver.model.Ratings;
-import com.redhat.analytics.jiminy.htmlserver.model.RatingsDAO;
-import com.redhat.analytics.jiminy.htmlserver.repository.RatingRepository;
+import io.radanalytics.jiminy.model.Ratings;
+import io.radanalytics.jiminy.model.RatingsDAO;
+import io.radanalytics.jiminy.RatingRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
