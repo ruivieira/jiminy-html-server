@@ -6,13 +6,13 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    'main': __dirname + '/web/main',
-    'app': __dirname + '/web/index.jsx'
+    'main': __dirname + '/main',
+    'app': __dirname + '/index.jsx'
   },
 
   output: {
     filename: '[name].js',
-    path: __dirname + '/src/main/resources/static/dist'
+    path: __dirname + '/../src/main/resources/static/dist'
   },
 
   // Jquery imported into global context from main (using script-loader)
@@ -35,27 +35,27 @@ module.exports = {
     //copy patternfly assets
     new CopyWebpackPlugin([
       {
-        from: { glob: './web/node_modules/patternfly/dist/img/*.*'},
+        from: { glob: './node_modules/patternfly/dist/img/*.*'},
         to: './img',
         flatten: true
       },
       {
-        from: { glob: './web/node_modules/patternfly/dist/fonts/*.*'},
+        from: { glob: './node_modules/patternfly/dist/fonts/*.*'},
         to: './fonts',
         flatten: true
       },
       {
-        from: { glob: './web/node_modules/patternfly/dist/css/*.*'},
+        from: { glob: './node_modules/patternfly/dist/css/*.*'},
         to: './css',
         flatten: true
       },
       {
-        from: { glob: './web/node_modules/react-bootstrap-table/css/*.*'},
+        from: { glob: './node_modules/react-bootstrap-table/css/*.*'},
         to: './css',
         flatten: true
       },
       {
-        from: { glob: './web/main.css'},
+        from: { glob: './main.css'},
         to: './css',
         flatten: true
       }

@@ -1,4 +1,4 @@
-package com.redhat.analytics.jiminy.htmlserver.rest;
+package io.radanalytics.jiminy.htmlserver;
 
 import static org.junit.Assert.*;
 

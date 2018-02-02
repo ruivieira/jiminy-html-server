@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import messageReducer from './pf-lib/message/messageReducer';
-import modalReducer from './pf-lib/modal/modalReducer';
+import messageReducer from 'redux';
+import modalReducer from 'redux';
 import movieReducer from './movieRating/movieReducers';
 import addRatingReducer from './addRating/addRatingReducer';
 import { createForms } from 'react-redux-form';

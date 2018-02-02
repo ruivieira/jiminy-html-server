@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import React from "react";
 import { Provider } from "react-redux";
 import { VIEWS_CONFIG, NAVBAR_CONFIG } from "./configs.jsx";
-import App from "./pf-lib/appContainer/App.jsx";
+import App from "react";
 import store from "./store";
 
 render (
