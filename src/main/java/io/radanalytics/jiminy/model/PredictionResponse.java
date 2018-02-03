@@ -1,11 +1,11 @@
 package io.radanalytics.jiminy.model;
 
 import java.util.List;
+
 /**
  * PredictionResponse<br>
  * 
- * Encloses the predictions number of recommendations and userid. In the ui a user makes a webservice call
- * passing in a userid and this is the response that the client would recieve.
+ * The prediction response as userid and number of recommendations.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  */

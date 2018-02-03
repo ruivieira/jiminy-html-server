@@ -3,8 +3,8 @@ package io.radanalytics.jiminy.model;
 /**
  * 
  * ColumnHeader<br>
- * Datatable requires 2 fields columns and dataSet to exist enorder to render the datatable.
- * You can created multiple instances of this class in a list and push to the UI. 
+ * Datatable requires 2 fields columns and dataSet to exist in order to render the datatable.
+ * You can create multiple instances of this class in a list and push to the UI.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  *

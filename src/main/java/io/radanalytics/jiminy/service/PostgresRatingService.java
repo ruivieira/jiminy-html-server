@@ -1,18 +1,19 @@
 package io.radanalytics.jiminy.service;
 
+import java.util.List;
+import static java.util.stream.Collectors.toList;
+
 import io.radanalytics.jiminy.model.Ratings;
 import io.radanalytics.jiminy.model.RatingsDAO;
 import io.radanalytics.jiminy.RatingRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import static java.util.stream.Collectors.toList;
-import java.util.List;
 
 /**
  * PostgresRatingService<br>
  * 
- * Used to interface between the controller and the data access layer.
+ * Provides the interface between the controller and the data access layer.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  */

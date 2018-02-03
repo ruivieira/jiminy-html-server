@@ -2,8 +2,7 @@ package io.radanalytics.jiminy.model;
 
 /**
  * PredictionType<br>
- * This is a wrapper for the prediction response. See PredictionResponse java docs for how what this class 
- * is used for.
+ * This is a wrapper for the prediction response.
  * @author Zak Hassan <zhassan@redhat.com>
  */
 public class PredictionType {
@@ -28,7 +27,5 @@ public class PredictionType {
 	public String toString() {
 		return "PredictionType [prediction=" + prediction + "]";
 	}
-	
-	
-	
+
 }

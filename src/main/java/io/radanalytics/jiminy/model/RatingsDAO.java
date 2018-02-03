@@ -1,12 +1,11 @@
 package io.radanalytics.jiminy.model;
 
-
 import javax.validation.constraints.NotNull;
 
 /**
  * RatingDAO<br>
  * 
- * This is a dao object that is used between the controller and the repository for data storage.
+ * This is a DAO object that is used between the controller and the repository for data storage.
  * @author Zak Hassan <zhassan@redhat.com>
  */
 public class RatingsDAO {
@@ -69,10 +68,6 @@ public class RatingsDAO {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
-
-	 
-	 
- 
 
 	public Integer getMovieid() {
 		return movieid;

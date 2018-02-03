@@ -1,8 +1,8 @@
 package io.radanalytics.jiminy.service;
 
-import io.radanalytics.jiminy.model.RatingsDAO;
-
 import java.util.List;
+
+import io.radanalytics.jiminy.model.RatingsDAO;
 
 /**
  * RatingService<br>
@@ -24,7 +24,5 @@ public interface RatingService {
     RatingsDAO update(RatingsDAO users);
 
     void deleteAll();
-
-  
 
 }

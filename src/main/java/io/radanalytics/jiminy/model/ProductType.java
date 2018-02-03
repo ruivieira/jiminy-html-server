@@ -3,7 +3,7 @@ package io.radanalytics.jiminy.model;
 /**
  * ProductType<br>
  * 
- * This class is enclosed in RankType and is used in the second call to the predictor. See RankType javadocs for
+ * This class is enclosed by the RankType and is used in the second call to the predictor. See RankType javadocs for
  * more details.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
