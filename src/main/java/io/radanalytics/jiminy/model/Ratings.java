@@ -8,13 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
-
 /**
  * Ratings<br>
  * 
- * Rating Model class used for persistence with postgres datastore backend.
+ * Rating Model class used for persistence with Postgresql datastore backend.
  * @author Zak Hassan <zhassan@redhat.com>
  */
 @Entity

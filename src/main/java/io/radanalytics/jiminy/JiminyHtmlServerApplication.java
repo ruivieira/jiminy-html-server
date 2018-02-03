@@ -1,8 +1,5 @@
 package io.radanalytics.jiminy;
 
-
-import static springfox.documentation.builders.PathSelectors.regex;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -16,14 +13,14 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
+import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
  * JiminyHtmlServerApplication<br>
  * 
- * This is the entry point of this springboot application and will be the place where the main configurations are setup
- * Below you will see that we have setup swagger documentation for webservices and component scan for seaching for
- * spring components in the application by specifying the package name.
+ * This is the entry point of this Spring Boot application where the main configurations are set.
+ * Below we have setup Swagger documentation for the web service and scan for Spring components in
+ * the application by package name.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  *
@@ -36,8 +33,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EntityScan("io.radanalytics.jiminy")
 public class JiminyHtmlServerApplication  {
 
-	
-	
 	@Bean
 	public Docket coreApi() {
 		return new Docket(DocumentationType.SWAGGER_2)

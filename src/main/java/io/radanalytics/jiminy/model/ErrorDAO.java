@@ -2,7 +2,7 @@ package io.radanalytics.jiminy.model;
 
 /**
  * ErrorDAO<br>
- * Standard error pojo 
+ * Standard error POJO
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  *

@@ -4,10 +4,9 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import io.radanalytics.jiminy.model.RatingsDAO;
-import io.radanalytics.jiminy.model.ReportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -17,18 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-//import io.swagger.annotations.ApiOperation;
-
-import io.radanalytics.jiminy.service.RatingService;
 
 import io.swagger.annotations.ApiOperation;
+
+import io.radanalytics.jiminy.model.RatingsDAO;
+import io.radanalytics.jiminy.model.ReportDAO;
+import io.radanalytics.jiminy.service.RatingService;
 
 /**
  * RatingsController<br>
  * 
- * Spring controller which will serve requests for CRUD operations against the ratings database. 
+ * Spring controller which serves requests for CRUD operations against the ratings database.
  * In this controller there is a method that will proxy the predictor when users provide a userid
- * and it will provide a top 5 recommended products. To get more then 5 predictions change the 
+ * and it will provide the top 5 recommended products. To get more than 5 predictions change the
  * NUM_PREDICTIONS constant.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
@@ -46,8 +46,7 @@ public class RatingsController {
 
 	@Autowired
 	RatingService service;
-	 
-	
+
 	@ApiOperation(value = "getAllRatings", produces = "application/json", notes = "Querythe database to fetch full list of ratings from the postgres db")
 	@RequestMapping(method = RequestMethod.GET, path = "/api/ratings")
 	public List<RatingsDAO> getAllRatings() {

@@ -7,7 +7,7 @@ import java.util.List;
  * 
  * There are 2 calls that get made to the predictor. The first call will trigger the predictor to start calculating
  * what the recommended products are. It will return a prediction id which then gets used to make a second call.
- * This class is used to map the response from the second call to a pojo.
+ * This class is used to map the response from the second call to a POJO.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  */
@@ -63,7 +63,5 @@ public class RankType {
 	public String toString() {
 		return "RankType [id=" + id + ", products=" + products + ", topk=" + topk + ", user=" + user + "]";
 	}
-
-	 
 
 }

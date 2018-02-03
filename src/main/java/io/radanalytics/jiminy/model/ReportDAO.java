@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * ReportDAO<br>
  * 
- * Encloses the full report on what products would be recommended for a user given a userid.
+ * Encloses the full report on what products would be recommended for a given userid.
  * 
  * @author Zak Hassan <zhassan@redhat.com>
  */

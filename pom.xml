@@ -16,10 +16,11 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.6.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -32,25 +33,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--<plugin> -->
-			<!--<groupId>org.apache.maven.plugins</groupId> -->
-			<!--<artifactId>maven-antrun-plugin</artifactId> -->
-			<!--<executions> -->
-			<!--<execution> -->
-			<!--<phase>generate-sources</phase> -->
-			<!--<configuration> -->
-			<!--<tasks> -->
-			<!--<exec executable="/bin/bash"> -->
-			<!--<arg value="build-reactjs-ui.sh" /> -->
-			<!--</exec> -->
-			<!--</tasks> -->
-			<!--</configuration> -->
-			<!--<goals> -->
-			<!--<goal>run</goal> -->
-			<!--</goals> -->
-			<!--</execution> -->
-			<!--</executions> -->
-			<!--</plugin> -->
 		</plugins>
 	</build>
 	<dependencies>
@@ -108,7 +90,6 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.1.4</version>
 		</dependency>
-
 
 		<!-- REST Client for Predictor -->
 		<dependency>
