@@ -12,8 +12,3 @@ spring:
     generate-ddl: true
 server:
     port: 8181
-logging:
-     path: /logs/jiminy-html-server
-     file: server.log
-     level:
-         root: INFO
