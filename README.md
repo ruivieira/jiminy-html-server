@@ -33,7 +33,7 @@ This application can be deployed in OpenShift environments and built "on-the-fly
 
 ```bash
 oc new-app fabric8/s2i-java~https://github.com/radanalyticsio/jiminy-html-server.git \
-    -p APPLICATION_NAME=jiminy-html-service \
+    -p APPLICATION_NAME=jiminy-html-server \
     -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/postgres \
     -e SPRING_DATASOURCE_USERNAME=postgres -e SPRING_DATASOURCE_PASSWORD=postgres \
     -e OPENSHIFT_CONFIG_PREDICTOR_URL=http://predictor-elmiko.apps.jiminy.radanalyticslabs.io/predictions/ranks
@@ -41,4 +41,4 @@ oc new-app fabric8/s2i-java~https://github.com/radanalyticsio/jiminy-html-server
     
 Note to make sure the OPENSHIFT_CONFIG_PREDICTOR_URL is set for the correct route to the predictor endpoint.
 
-`oc expose svc/jiminy-html-service`
+`oc expose svc/jiminy-html-server`
