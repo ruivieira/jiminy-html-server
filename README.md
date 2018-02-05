@@ -8,7 +8,7 @@ Technologies included are:
 ## Usage
 The application can be run in two ways:
 
-`mvn package` then `java -jar target\/jiminy-html-server-1.0.0-SNAPSHOT.jar`
+`mvn package` then `java -jar target\jiminy-html-server-1.0.0-SNAPSHOT.jar`
 
 The Maven POM has the Spring Boot plugin configured so the app can also be run using:
 
