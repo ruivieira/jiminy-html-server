@@ -23,11 +23,12 @@ npm run build
 ```
 
 ## Configuration
+Application configuration has been externalized to a YAML file that is read and values injected into the app via Spring annotations. Note that Spring has the capability to interpret those configuration properties as environment variables using relaxed binding. See below in [s2i](#s2i).
 
 ## Swagger
 You can retrieve a Swagger UI definition from the running service. For example: http://localhost:8181/swagger-ui.html
 
-## s2i
+## [s2i](#s2i)
 This application can be deployed in OpenShift environments and built "on-the-fly" using source-to-image (s2i). An appropriate image builder is the `fabric8/s2i-java` image.
 
 ```bash
