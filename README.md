@@ -26,3 +26,18 @@ npm run build
 
 ## Swagger
 You can retrieve a Swagger UI definition from the running service. For example: http://localhost:8181/swagger-ui.html
+
+## s2i
+This application can be deployed in OpenShift environments and built "on-the-fly" using source-to-image (s2i). An appropriate image builder is the `fabric8/s2i-java` image.
+
+```bash
+oc new-app fabric8/s2i-java~https://github.com/radanalyticsio/jiminy-html-server.git \
+    -p APPLICATION_NAME=jiminy-html-service \
+    -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/postgres \
+    -e SPRING_DATASOURCE_USERNAME=postgres -e SPRING_DATASOURCE_PASSWORD=postgres \
+    -e OPENSHIFT_CONFIG_PREDICTOR_URL=http://predictor-elmiko.apps.jiminy.radanalyticslabs.io/predictions/ranks
+```
+    
+Note to make sure the OPENSHIFT_CONFIG_PREDICTOR_URL is set for the correct route to the predictor endpoint.
+
+`oc expose svc/jiminy-html-service`
