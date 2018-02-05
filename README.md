@@ -16,6 +16,12 @@ The Maven POM has the Spring Boot plugin configured so the app can also be run u
 
 Once the application is started, point your browser to http://localhost:8181/
 
+The UI is served as static content from the resources dir. [Webpack](https://webpack.js.org/) is used to bundle the web assets into one file. If assets need to be rebundled then:
+```bash
+npm install
+npm run build
+```
+
 ## Configuration
 
 ## Swagger
