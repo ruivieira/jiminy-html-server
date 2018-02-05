@@ -1,4 +1,9 @@
 # Jiminy HTML server
+This is one component in a suite that includes the [Jiminy modeler](https://github.com/radanalyticsio/jiminy-modeler) and the [Jiminy predictor](https://github.com/radanalyticsio/jiminy-predictor). This Java application is designed to provide a web UI for adding movie ratings as well as retrieving movie recommendations from the predictor service.
+Technologies included are:
+* Spring Boot
+* Spring Data JPA
+* REST
 ## Usage
 `mvn spring-boot:run`
 ## Configuration
