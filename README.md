@@ -4,8 +4,18 @@ Technologies included are:
 * Spring Boot
 * Spring Data JPA
 * REST
+* Swagger UI
 ## Usage
+The application can be run in two ways:
+
+`mvn package` then `java -jar target\/jiminy-html-server-1.0.0-SNAPSHOT.jar`
+
+The Maven POM has the Spring Boot plugin configured so the app can also be run using:
+
 `mvn spring-boot:run`
+
+Once the application is started, point your browser to http://localhost:8181/
+
 ## Configuration
 
 ## Swagger
