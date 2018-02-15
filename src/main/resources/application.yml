@@ -11,4 +11,4 @@ spring:
   jpa:
     generate-ddl: true
 server:
-    port: 8181
+    port: 8778
