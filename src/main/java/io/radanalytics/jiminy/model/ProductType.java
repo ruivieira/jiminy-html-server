@@ -13,6 +13,15 @@ public class ProductType {
 	String id;
 	double rating;
 
+    public static double filterRating(double rating) {
+        if (rating > 5.0) {
+            return 5.0;
+        } else if (rating < 0.0) {
+            return 0.0;
+        }
+        return rating;
+    }
+
 	public String getId() {
 		return id;
 	}
@@ -26,13 +35,13 @@ public class ProductType {
 	}
 
 	public void setRating(double rating) {
-		this.rating = rating;
+		this.rating = filterRating(rating);
 	}
 
 	public ProductType(String id, double rating) {
 		super();
 		this.id = id;
-		this.rating = rating;
+		this.rating = filterRating(rating);
 	}
 
 	public ProductType() {
