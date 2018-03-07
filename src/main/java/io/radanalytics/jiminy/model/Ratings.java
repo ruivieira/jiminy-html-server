@@ -2,11 +2,7 @@ package io.radanalytics.jiminy.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Ratings<br>
@@ -82,4 +78,5 @@ public class Ratings implements Serializable {
 		return "Ratings [id=" + id + ", userid=" + userid + ", movieId=" + movieid + ", rating=" + rating
 				+ ", timestamp=" + timestamp + "]";
 	}
+
 }

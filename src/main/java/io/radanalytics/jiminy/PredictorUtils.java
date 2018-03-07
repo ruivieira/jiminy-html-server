@@ -1,29 +1,26 @@
 package io.radanalytics.jiminy;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
-
+import io.radanalytics.jiminy.model.ColumnHeader;
+import io.radanalytics.jiminy.model.PredictionType;
+import io.radanalytics.jiminy.model.RankType;
+import io.radanalytics.jiminy.model.ReportDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.radanalytics.jiminy.model.ColumnHeader;
-import io.radanalytics.jiminy.model.PredictionType;
-import io.radanalytics.jiminy.model.ReportDAO;
-import io.radanalytics.jiminy.model.RankType;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * PredictorUtils<br>
@@ -32,7 +29,7 @@ import io.radanalytics.jiminy.model.RankType;
  * @author Zak Hassan <zhassan@redhat.com>
  */
 public class PredictorUtils {
-	 
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(PredictorUtils.class);
 	public static ReportDAO fetchPredictions(String uid, int topk, String predictorURL) throws InterruptedException, JsonParseException, JsonMappingException, IOException {
 		ReportDAO report=null;
@@ -55,7 +52,7 @@ public class PredictorUtils {
 			RankType rank = mapper.readValue(output, RankType.class);
 			 
 			report = new ReportDAO("OK",
-					Arrays.asList(new ColumnHeader("id", "ID"), new ColumnHeader("rating", "Rating")),
+					Arrays.asList(new ColumnHeader("description", "Description"), new ColumnHeader("rating", "Rating")),
 					rank.getProducts());
 		 
 		} catch (JsonParseException e) {

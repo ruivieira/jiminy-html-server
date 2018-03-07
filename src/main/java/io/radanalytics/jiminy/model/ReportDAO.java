@@ -13,7 +13,7 @@ public class ReportDAO {
 
     private String status;
     private List<ColumnHeader> columns;
-    private List<?> dataSet;
+    private List<ProductType> dataSet;
 
     public String getStatus() {
         return status;
@@ -31,15 +31,15 @@ public class ReportDAO {
         this.columns = columns;
     }
 
-    public List<?> getDataSet() {
+    public List<ProductType> getDataSet() {
         return dataSet;
     }
 
-    public void setDataSet(List<?> dataSet) {
+    public void setDataSet(List<ProductType> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public ReportDAO(String status, List<ColumnHeader> columns, List<?> dataSet) {
+    public ReportDAO(String status, List<ColumnHeader> columns, List<ProductType> dataSet) {
         this.status = status;
         this.columns = columns;
         this.dataSet = dataSet;
