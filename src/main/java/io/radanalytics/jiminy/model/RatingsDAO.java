@@ -17,6 +17,8 @@ public class RatingsDAO {
     @NotNull
     private double rating;
     private Integer timestamp;
+    private Product product;
+
     public RatingsDAO(){}
 
     public RatingsDAO(Ratings r){
@@ -27,13 +29,14 @@ public class RatingsDAO {
         timestamp=r.getTimestamp();
     }
 
-    public RatingsDAO(long id, Integer userid, Integer movieid, double rating, Integer timestamp) {
+    public RatingsDAO(long id, Product product, Integer userid, Integer movieid, double rating, Integer timestamp) {
 		super();
 		this.id = id;
 		this.userid = userid;
 		this.movieid = movieid;
 		this.rating = rating;
 		this.timestamp = timestamp;
+		this.product = product;
 	}
 
 	public long getId() {
@@ -82,4 +85,12 @@ public class RatingsDAO {
 		return "RatingsDAO [id=" + id + ", userid=" + userid + ", movieid=" + movieid + ", rating=" + rating
 				+ ", timestamp=" + timestamp + "]";
 	}
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

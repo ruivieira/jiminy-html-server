@@ -10,7 +10,8 @@ package io.radanalytics.jiminy.model;
  */
 public class ProductType {
 	
-	String id;
+	long id;
+    String description;
 	double rating;
 
     public static double filterRating(double rating) {
@@ -22,11 +23,11 @@ public class ProductType {
         return rating;
     }
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -38,10 +39,19 @@ public class ProductType {
 		this.rating = filterRating(rating);
 	}
 
-	public ProductType(String id, double rating) {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ProductType(long id, String description, double rating) {
 		super();
 		this.id = id;
 		this.rating = filterRating(rating);
+		this.description = description;
 	}
 
 	public ProductType() {
